@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex items-center justify-center">
+
+    <div class="container mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-md">
+        <h1 class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-6">Password Generator</h1>
+
+        <form method="POST" class="space-y-4">
+            <div>
+                <label for="length" class="block text-sm font-medium">Password Length:</label>
+                <input type="number" id="length" name="length" required
+                       class="input input-bordered w-full bg-gray-200 dark:bg-gray-700">
+            </div>
+            <div>
+                <label for="account" class="block text-sm font-medium">Account:</label>
+                <input type="text" id="account" name="account" required
+                       class="input input-bordered w-full bg-gray-200 dark:bg-gray-700">
+            </div>
+            <button type="submit" class="btn btn-primary w-full bg-purple-500 dark:bg-purple-600 hover:bg-purple-700">Generate Password</button>
+        </form>
+
+        {% if password %}
+            <div class="mt-6 p-4 bg-gray-200 dark:bg-gray-700 rounded-lg text-center relative">
+                <p id="generated-password" class="text-lg font-mono text-purple-600 dark:text-purple-400">{{ password }}</p>
+
+                <!-- Copy Button -->
+                <button onclick="copyPassword()" id="copy-button" class="btn btn-sm mt-2 bg-purple-500 dark:bg-purple-600 text-white">
+                    Copy
+                </button>
+
+                <!-- Copy Confirmation Message -->
+                <p id="copy-message" class="mt-2 text-green-500 text-sm hidden">✅ Copied to clipboard</p>
+            </div>
+        {% endif %}
+
+        <div class="mt-6 flex justify-center">
+            <a href="{{ url_for('view_passwords') }}" class="btn btn-secondary bg-purple-500 dark:bg-purple-600 hover:bg-purple-700">
+                View Saved Passwords
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript to Copy Password and Show Confirmation -->
+    <script>
+        function copyPassword() {
+            // Get the generated password text
+            const passwordText = document.getElementById("generated-password").innerText;
+
+            // Copy password to clipboard
+            navigator.clipboard.writeText(passwordText).then(() => {
+                // Show confirmation message
+                const message = document.getElementById("copy-message");
+                message.classList.remove("hidden");
+
+                // Hide the message after a few seconds
+                setTimeout(() => {
+                    message.classList.add("hidden");
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
