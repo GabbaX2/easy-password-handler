@@ -1,65 +1,69 @@
-Password Generator and Manager
+# Password Generator and Manager
 
-This project is a Flask-based web application for securely generating, storing, and managing passwords. It provides an intuitive interface for users to create strong passwords, save them securely, and manage their saved passwords.
+This project is a **Flask-based web application** for securely generating, storing, and managing passwords. It provides an intuitive interface for users to create strong passwords, save them securely, and manage their saved passwords.
 
-About the Author
+---
 
-Hi! My name is Gabriella, and I am a student currently learning to use Python, Flask, and databases. This project is part of my learning journey to improve my skills in web development and backend programming. If you have any suggestions or feedback, I’d love to hear from you!
+## About the Author
 
-Features
+Hi! My name is **Gabriella**, and I am a **student** currently learning to use **Python**, **Flask**, and **databases**. This project is part of my learning journey to improve my skills in web development and backend programming. If you have any suggestions or feedback, I’d love to hear from you!
 
-1. Password Generator
+---
 
-	•	Generates random passwords with a customizable length.
-	•	Supports uppercase letters, lowercase letters, and digits.
+## Features
 
-2. Password Storage
+### **Password Generator**
+- Generates random passwords with a customizable length.
+- Supports uppercase letters, lowercase letters, and digits.
 
-	•	Stores generated passwords in an SQLite database with the associated account name and timestamp.
-	•	Automatically creates the database table (passwords) if it does not exist.
+### **Password Storage**
+- Stores generated passwords in an SQLite database with the associated account name and timestamp.
+- Automatically creates the database table (`passwords`) if it does not exist.
 
-3. Password Management
+### **Password Management**
+- View all saved passwords in a structured table.
+- Update a saved password with a new randomly generated one.
+- Delete saved passwords if no longer needed.
 
-	•	View all saved passwords in a structured table.
-	•	Update a saved password with a new randomly generated one.
-	•	Delete saved passwords if no longer needed.
+### **Responsive Design**
+- Fully responsive, with a modern, user-friendly interface styled using **TailwindCSS** and **DaisyUI**.
 
-4. Responsive Design
+### **Dark Mode Support**
+- Adapts to the user’s preferred theme for improved usability.
 
-	•	Fully responsive, with a modern, user-friendly interface styled using TailwindCSS and DaisyUI.
+---
 
-5. Dark Mode Support
+## Installation and Setup
 
-	•	Adapts to the user’s preferred theme for improved usability.
+### **Prerequisites**
+- Python 3.x installed.
+- Flask installed:  
+  ```bash
+  pip install flask
 
-Installation and Setup
+	•	SQLite (pre-installed with Python).
 
-1. Prerequisites
-
-	•	Python 3.x installed
-	•	Flask installed (pip install flask)
-	•	SQLite (pre-installed with Python)
-
-2. Clone the Repository
+Clone the Repository
 
 git clone https://github.com/your-username/password-manager.git
 cd password-manager
 
-3. Install Dependencies
+## Install Dependencies
 
-Ensure you have Flask installed:
+- Ensure you have Flask installed:
 
 pip install flask
 
-4. Run the Application
+Run the Application
 
-Start the Flask development server:
+- Start the Flask development server:
 
 python app.py
 
-Access the application at http://127.0.0.1:5000/.
+Access the application at:
+http://127.0.0.1:5000/
 
-Project Structure
+## Project Structure
 
 password-manager/
 ├── app.py                # Main Flask application
@@ -71,7 +75,7 @@ password-manager/
 ├── passwords.db          # SQLite database (auto-generated)
 └── README.md             # Project documentation
 
-Usage
+# Usage
 
 Generate a Password
 
@@ -91,19 +95,22 @@ Security Considerations
 	•	Passwords are stored in plain text in the SQLite database. For better security, consider hashing or encrypting passwords before storage.
 	•	Ensure the app is deployed securely in production with HTTPS and proper Flask configurations.
 
-Dependencies
+# Dependencies
 
-	•	Flask: pip install flask
+	•	Flask: Install via pip install flask
 	•	SQLite: Pre-installed with Python
 	•	TailwindCSS: Included via CDN
 	•	DaisyUI: Included via CDN
 
-Future Improvements
+# Future Improvements
 
 	•	Add user authentication for additional security.
 	•	Implement encryption for stored passwords.
 	•	Add a feature to customize password complexity (special characters, etc.).
 
-Author: Gabba
+# Author:
 
+Gabba
+I’m a student exploring web development and backend technologies.
+Feel free to reach out with suggestions or feedback!
 
